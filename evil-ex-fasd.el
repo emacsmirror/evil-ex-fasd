@@ -2,9 +2,12 @@
 
 ;; Copyright © 2018, Rashawn Zhang, all rights reserved.
 
+;; Version: 0.1.0
+;; URL: https://github.com/yqrashawn/evil-ex-fasd
+;; Package-Requires: ((emacs "24.4"))
 ;; Author: Rashawn Zhang <namy.19@gmail.com>
 ;; Created:  2 August 2018
-;; Keywords: fasd, evil, navigation
+;; Keywords: tools, fasd, evil, navigation
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +28,7 @@
 
 ;;; Code:
 
+(require 'evil)
 (require 'fasd)
 
 (defvar evil-ex-fasd-prefix ":"
@@ -40,7 +44,7 @@
 (advice-add 'evil-ex-execute :around 'evil-ex-fasd-eval)
 
 ;;;###autoload
-(defun evil-ex-fasd: ()
+(defun evil-ex-fasd ()
   "Invoke `evil-ex' with `evil-ex-fasd-prefix'."
   (interactive)
   (evil-ex evil-ex-fasd-prefix))
