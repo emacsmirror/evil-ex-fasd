@@ -38,10 +38,10 @@
   "Advice for evil-ex-execute. ORIG-FUN is `evil-ex-execute', STR is the command input."
   (if (not (cond
             ((string-prefix-p evil-ex-fasd-prefix str)
-             (funcall 'fasd-find-file t (string-remove-prefix evil-ex-fasd-prefix str)))))
+             (funcall #'fasd-find-file t (string-remove-prefix evil-ex-fasd-prefix str)))))
       (funcall orig-fun str)))
 
-(advice-add 'evil-ex-execute :around 'evil-ex-fasd-eval)
+(advice-add #'evil-ex-execute :around 'evil-ex-fasd-eval)
 
 ;;;###autoload
 (defun evil-ex-fasd ()
