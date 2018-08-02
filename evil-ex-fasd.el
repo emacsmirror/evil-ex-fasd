@@ -32,10 +32,10 @@
 (require 'fasd)
 
 (defvar evil-ex-fasd-prefix ":"
-  "Prefix for evil-ex command that will invoke fasd.")
+  "Prefix for ‘evil-ex’ command that will invoke fasd.")
 
 (defun evil-ex-fasd-eval (orig-fun str)
-  "Advice for evil-ex-execute. ORIG-FUN is `evil-ex-execute', STR is the command input."
+  "Advice for ‘evil-ex-execute’. ORIG-FUN is `evil-ex-execute', STR is the command input."
   (if (not (cond
             ((string-prefix-p evil-ex-fasd-prefix str)
              (funcall #'fasd-find-file t (string-remove-prefix evil-ex-fasd-prefix str)))))
