@@ -4,9 +4,12 @@ Invoke ~fasd-find-file~ right from ~evil-ex~.
 
 * Usage
 Default invoke fasd when the evil-ex-command with prefix ~:~, eg. ~::Downloads~.
+
 You can change the prefix by ~(setq evil-ex-fasd-prefix "j ")~, then ~:j Downloads~.
+
 There's also a command ~evil-ex-fasd~ that invoke ~evil-ex~ and insert the prefix for you.
 
 * Dependency
 [[http://melpa.org/#/evil][evil]]
+
 [[http://melpa.org/#/fasd][fasd]]
