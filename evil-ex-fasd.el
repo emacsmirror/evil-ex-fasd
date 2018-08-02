@@ -24,7 +24,7 @@
 
 ;;; Commentary:
 
-;;  Invode fasd functionality right from `evil-ex'
+;;  Invoke fasd functionality right from `evil-ex'
 
 ;;; Code:
 
@@ -32,13 +32,13 @@
 (require 'fasd)
 
 (defvar evil-ex-fasd-prefix ":"
-  "Prefix for evil-ex command that will invode fasd.")
+  "Prefix for evil-ex command that will invoke fasd.")
 
 (defun evil-ex-fasd-eval (orig-fun str)
   "Advice for evil-ex-execute. ORIG-FUN is `evil-ex-execute', STR is the command input."
   (if (not (cond
             ((string-prefix-p evil-ex-fasd-prefix str)
-             (funcall 'fasd-find-file t (string-remove-prefix ":" str)))))
+             (funcall 'fasd-find-file t (string-remove-prefix evil-ex-fasd-prefix str)))))
       (funcall orig-fun str)))
 
 (advice-add 'evil-ex-execute :around 'evil-ex-fasd-eval)
