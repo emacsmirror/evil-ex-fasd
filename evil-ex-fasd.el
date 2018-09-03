@@ -4,7 +4,7 @@
 
 ;; Version: 0.1.0
 ;; URL: https://github.com/yqrashawn/evil-ex-fasd
-;; Package-Requires: ((emacs "24.4"))
+;; Package-Requires: ((emacs "24.4") (evil "1.1.0") (fasd "0"))
 ;; Author: Rashawn Zhang <namy.19@gmail.com>
 ;; Created:  2 August 2018
 ;; Keywords: tools, fasd, evil, navigation
